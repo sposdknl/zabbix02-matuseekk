@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>7.0</version>
+    <host_groups>
+        <host_group>
+            <uuid>6f6799aa69e844b4b3918f779f2abf08</uuid>
+            <name>Zabbix servers</name>
+        </host_group>
+    </host_groups>
+    <hosts>
+        <host>
+            <host>pfsense</host>
+            <name>pfsense</name>
+            <templates>
+                <template>
+                    <name>PFSense - mojeverze</name>
+                </template>
+            </templates>
+            <groups>
+                <group>
+                    <name>Zabbix servers</name>
+                </group>
+            </groups>
+            <interfaces>
+                <interface>
+                    <type>SNMP</type>
+                    <ip>192.168.1.1</ip>
+                    <port>161</port>
+                    <details>
+                        <community>{$SNMP_COMMUNITY}</community>
+                    </details>
+                    <interface_ref>if1</interface_ref>
+                </interface>
+            </interfaces>
+            <inventory_mode>DISABLED</inventory_mode>
+        </host>
+    </hosts>
+</zabbix_export>
